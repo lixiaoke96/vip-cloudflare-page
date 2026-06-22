@@ -1,0 +1,18 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# 允许视频和媒体资源跨域加载
+/*.mp4
+  Cache-Control: public, max-age=86400
+
+/*.m3u8
+  Cache-Control: public, max-age=60
+
+# API 代理路径 (如果后续添加 Functions)
+/api/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Cache-Control: no-cache

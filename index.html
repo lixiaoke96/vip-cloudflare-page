@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP 视频解析</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- ArtPlayer CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">🎬 VIP 视频解析</h1>
+      <p class="subtitle">输入视频链接，选择解析接口，即可免费观看</p>
+    </header>
+
+    <!-- Input Section -->
+    <main class="main">
+      <div class="input-group">
+        <div class="input-row">
+          <input
+            type="url"
+            id="videoUrl"
+            class="url-input"
+            placeholder="请粘贴视频播放页链接（如腾讯视频、爱奇艺、优酷等）"
+            autofocus
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="input-row input-row-select">
+          <select id="apiSelect" class="api-select">
+            <option value="">正在加载接口列表...</option>
+          </select>
+          <button id="parseBtn" class="parse-btn" type="button">
+            <span class="btn-text">🔍 解析视频</span>
+            <span class="btn-loading" style="display:none;">
+              <span class="spinner"></span> 解析中...
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Status Message -->
+      <div id="statusMsg" class="status-msg" style="display:none;"></div>
+
+      <!-- Video Player -->
+      <div id="playerWrapper" class="player-wrapper" style="display:none;">
+        <div id="artplayer"></div>
+      </div>
+
+      <!-- Tips -->
+      <div class="tips" id="tips">
+        <h3>📌 使用说明</h3>
+        <ol>
+          <li>打开目标视频网站（腾讯视频、爱奇艺、优酷等），找到想要观看的 VIP 视频</li>
+          <li>复制该视频播放页的完整 URL 地址</li>
+          <li>将 URL 粘贴到上方输入框</li>
+          <li>在下拉框中选择一个解析接口</li>
+          <li>点击「解析视频」按钮，等待解析完成即可播放</li>
+        </ol>
+        <p class="tips-note">💡 提示：如果某个接口解析失败，请尝试切换到其他接口。API 接口可在 <code>config.json</code> 文件中自由配置。</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>本工具仅提供视频解析技术服务，不存储任何视频内容</p>
+    </footer>
+  </div>
+
+  <!-- hls.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+  <!-- ArtPlayer -->
+  <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+  <!-- App Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

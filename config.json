@@ -1,0 +1,14 @@
+{
+  "apis": [
+    {
+      "name": "解析接口示例1",
+      "url": "https://api.example.com/jx?url={url}",
+      "description": "这是一个示例接口，请替换为实际可用的API"
+    },
+    {
+      "name": "解析接口示例2",
+      "url": "https://api.example2.com/parse?url={url}",
+      "description": "这是另一个示例接口，请替换为实际可用的API"
+    }
+  ]
+}
