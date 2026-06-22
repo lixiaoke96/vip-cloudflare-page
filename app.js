@@ -36,13 +36,15 @@
       if (apiConfig.length === 0) {
         apiSelect.innerHTML = '<option value="">没有可用的解析接口</option>';
       } else {
-        apiSelect.innerHTML = '<option value="">请选择解析接口...</option>';
+        apiSelect.innerHTML = '';
         apiConfig.forEach((api, index) => {
           const option = document.createElement('option');
           option.value = index;
           option.textContent = api.name;
           apiSelect.appendChild(option);
         });
+        // 默认选中第一个接口
+        apiSelect.selectedIndex = 0;
       }
     } catch (err) {
       console.error('加载配置文件失败:', err);
