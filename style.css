@@ -147,19 +147,14 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
   white-space: nowrap;
   min-width: 140px;
 }
 
 .parse-btn:hover:not(:disabled) {
   background: var(--primary-hover);
-  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
-}
-
-.parse-btn:active:not(:disabled) {
-  transform: translateY(0);
 }
 
 .parse-btn:disabled {
